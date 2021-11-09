@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post } = require('../../models');
 
 // Log in
 router.post('/login', async (req, res) => {
@@ -46,6 +46,41 @@ router.post('/logout', (req, res) => {
     } else {
         res.status(404).end();
     }
+});
+
+router.get('/', (req, res) => {
+    User.findAll({
+        attributes: { exclude: ['[password']}
+    })
+    .then(userData => res.json(userData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+    User.findOne({
+        attributes: { exclude: ['password']},
+        where: {
+            id: req.params.id
+        },
+        include: [{
+            model: Post,
+            attributes: [
+                'id',
+                'title',
+                'content'
+            ]
+        }]
+    })
+    .then(userData => {
+        if(!userData) {
+            res.status(404).json({ message: 'User not found.'});
+            return;
+        }
+        res.json(userData);
+    });
 });
 
 module.exports = router;

@@ -1,20 +1,25 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { User, Post } = require('../models');
 const withAuth = require ('../utils/auth');
 
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-      const userData = await User.findAll({
-        attributes: { exclude: ['password'] },
-        order: [['name', 'ASC']],
+      
+      const postData = await Post.findAll({
+        attributes: ['id', 'title', 'body'],
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          }
+        ],
       });
-  
-      const users = userData.map((project) => project.get({ plain: true }));
-  
-      res.render('homepage', {
-        users,
 
+      const posts = postData.map((map) => post.get({ plain: true }));
+
+      res.render('homepage', {
+        posts,
         logged_in: req.session.logged_in,
       });
     } catch (err) {
