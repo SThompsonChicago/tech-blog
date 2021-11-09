@@ -4,25 +4,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tech Blog</title>
+  <title>The Tech Blog</title>
 </head>
 
 <body>
     <header>
-        <h1>Tech Blog</h1>
-    </header>
-    <nav>
-        <a href="/">Home</a>
-        {{#if loggedIn}}
-        <button id="logout">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
+        <h1>
+            The Tech Blog
+        </h1>
+
+        {{#if logged_in}}
+        <nav>
+            <button id="logout">Logout</button>
+        </nav>
         {{/if}}
-    </nav>
+    </header>
     <main>
         {{{body}}}
     </main>
-    {{#if loggedIn}}
+
+
+    {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
 </body>

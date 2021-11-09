@@ -1,28 +1,35 @@
 const router = require('express').Router();
-
+const { User } = require('../models');
 const withAuth = require ('../utils/auth');
 
-// Handle GET request to homepage
-router.get('/', async (req, res) => {
+
+router.get('/', withAuth, async (req, res) => {
     try {
-        res.render('homepage', {
-            galleries,
-            loggedIn: req.session.loggedIn,
-          });
+      const userData = await User.findAll({
+        attributes: { exclude: ['password'] },
+        order: [['name', 'ASC']],
+      });
+  
+      const users = userData.map((project) => project.get({ plain: true }));
+  
+      res.render('homepage', {
+        users,
+
+        logged_in: req.session.logged_in,
+      });
     } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-});
-
-// Handle GET request to login page
-router.get('/login', (req, res) => {
-    //redirect to homepage if logged in
-    if (req.session.loggedIn) {
-        res.redirect('/');
-        return;
+  });
+  
+  router.get('/login', (req, res) => {
+    // If user is logged in, redirect to homepage
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
     }
+  
     res.render('login');
-});
-
-module.exports = router;
+  });
+  
+  module.exports = router;
