@@ -1,14 +1,5 @@
-<div>
-<h2>New Blog Entry</h2>
-<label for="post-title">Title</label>
-    <form id="new-post-form">
-        <input type="text" id="post-title" name="post-title"/>
-
-        <label for="content">Content</label>
-        <input id="content" name="content"/>
-
-        <button type="submit">Create New Entry</button>
-    </form>
+<div class="text-center">
+  <h2>{{title}}</h2>
+  <p>{{content}}</p>
+  <p>Created by {{user.name}}</p>
 </div>
-
-<script src="/js/new-post.js"></script>
