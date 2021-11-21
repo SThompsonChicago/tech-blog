@@ -1,6 +1,4 @@
-const { response } = require("express");
-
-async function newPostHandler(event) {
+const newPostHandler = async (event) => {
     event.preventDefault();
 
     const title = document.querySelector('#post-title').value.trim();
