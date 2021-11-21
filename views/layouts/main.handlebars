@@ -14,10 +14,25 @@
         </h1>
       <nav>
         {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">logout</button>
+        <form action="/">
+          <input type="submit" value="home" />
+        </form>
+        <form action="/dashboard">
+          <input type="submit" value="dashboard" />
+        </form>
+        <form action="/login">
+          <input type="submit" id = "logout" value="logout" />
+        </form>
         {{else}}
-        <a href="/login">login</a>
+        <form action="/">
+          <input type="submit" value="home" />
+        </form>
+        <form action="/dashboard">
+          <input type="submit" value="dashboard" />
+        </form>
+        <form action="/login">
+          <input type="submit" value="login" />
+        </form>
         {{/if}}
       </nav>
     </header>
