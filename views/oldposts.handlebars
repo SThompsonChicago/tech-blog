@@ -6,8 +6,8 @@
           <p class="title">
             The Tech Blog
           </p>
-          <p class="subtitle">
-            Create a new post.
+          <p class="subtitles">
+              Your previous posts
           </p>
         </div>
         <div class="hero-foot">
@@ -40,27 +40,7 @@
 
 
 
-<form class="form new-post-form">
-    <div class="field">
-  <label class="label" for="post-title">Title</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Type your title here." id="post-title" name="post-title">
-  </div>
-</div>
 
-<div class="field">
-  <label class="label" for="post-content">Body</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Enter your post here." rows="10" id="post-content" name="post-content"></textarea>
-  </div>
-</div>
-
-<div class="field is-grouped">
-  <div class="control">
-    <button class="submit button is-link">Submit</button>
-  </div>
-  </form>
-</div>
 
   {{#if posts.length}}
   <div>
@@ -81,6 +61,7 @@
     {{/each}}
   </div>
   {{/if}}
+</div>
 </div>
 
 <script src="./js/dashboard.js"></script>

@@ -2,40 +2,19 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Tech Blog</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tech Blog</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  </head>
 </head>
 
-<body>
-    <header>
-        <h1>
-            The Tech Blog
-        </h1>
-      <nav>
-        {{#if logged_in}}
-        <form action="/">
-          <input type="submit" value="home" />
-        </form>
-        <form action="/dashboard">
-          <input type="submit" value="dashboard" />
-        </form>
-        <form action="/login">
-          <input type="submit" id = "logout" value="logout" />
-        </form>
-        {{else}}
-        <form action="/">
-          <input type="submit" value="home" />
-        </form>
-        <form action="/dashboard">
-          <input type="submit" value="dashboard" />
-        </form>
-        <form action="/login">
-          <input type="submit" value="login" />
-        </form>
-        {{/if}}
-      </nav>
-    </header>
+
+
+
+
+
     <main>
         {{{body}}}
     </main>

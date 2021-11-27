@@ -1,16 +1,46 @@
+            <section class="hero is-success">
+
+
+<div class="hero-body">
+          <p class="title">
+            The Tech Blog
+          </p>
+        </div>
+        <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li><a href="/" class="navbar-item">
+                      Home
+                    </a></li>
+          <li><a href="/dashboard" class="navbar-item">
+                      New Post
+                    </a></li>
+            <li><a href="/oldposts" class="navbar-item">
+                      Previous Posts
+                    </a></li>
+          <li><a href="/login" id="logout">
+                      Logout
+                    </a></li>
+                              <li><a href="/login" id="logout">
+                      Login
+                    </a></li>
+        </ul>
+      </div>
+    </nav>
+      </div>
+  </section>
+    
+
+
 {{#each posts as |post| }}
-<div>
+<div class="box">
   <div>
     <h2>
 
       <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>Created by {{post.user.name}}</p>
-  </div>
-  <div>
-    <p>
-      {{post.content}}
-    </p>
   </div>
 </div>
 {{/each}}

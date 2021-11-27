@@ -13,12 +13,5 @@ const logout = async () => {
     }
 };
 
-const logpage = () => {
-
-    alert("button works!");
-    document.location.replace('/login');
-
-};
 
 document.querySelector('#logout').addEventListener('click', logout);
-document.querySelector('#login').addEventListener('click', logpage);
