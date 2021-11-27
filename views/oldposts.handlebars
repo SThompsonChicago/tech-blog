@@ -36,9 +36,9 @@
 <div class="box post-list">
 
   {{#if posts.length}}
-  <div>
-    <div class="field">
-  <label class="label">Your Previous Posts</label>
+  <div class="content">
+    <h1>Your Previous Posts</h1>
+    <h3>To view a post listed below, click on the title.</h3>
   </div>
 
     {{#each posts as |post|}}
@@ -50,7 +50,7 @@
         <p>{{post.content}}</p>
       </div>
       <div>
-        <button class="submit button is-link" data-id="{{post.id}}">delete</button>
+        <button class="submit button is-link" data-id="{{post.id}}">Delete</button>
       </div>
     </div>
     {{/each}}
