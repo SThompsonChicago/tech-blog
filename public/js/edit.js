@@ -1,10 +1,9 @@
-const newPostHandler = async (event) => {
+const editPostHandler = async (event) => {
     event.preventDefault();
 
-    alert('Button works!');
 
-    const title = document.querySelector('#post-title').value.trim();
-    const content = document.querySelector('#post-content').value.trim();
+    const title = document.querySelector('#edit-title').value.trim();
+    const content = document.querySelector('#edit-content').value.trim();
 
     if (title && content) {
         const response = await fetch('/api/posts', {
@@ -28,5 +27,5 @@ const newPostHandler = async (event) => {
 };
   
   document
-    .querySelector('.new-post-form')
-    .addEventListener('submit', newPostHandler);
+    .querySelector('.edit-post-form')
+    .addEventListener('submit', editPostHandler);

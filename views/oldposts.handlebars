@@ -43,16 +43,15 @@
 
     {{#each posts as |post|}}
     <div class="box">
-      <div>
-        <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
+      <div class="content">
+        <h1><a href="/post/{{post.id}}">{{post.title}}</a></h1>
       </div>
-      <div>
-        <p>{{post.content}}</p>
-      </div>
+
       <div>
         <button class="submit button is-link" id="delete" data-id="{{post.id}}">Delete</button>
         <a href="/edit/{{post.id}}" class="button is-link">Edit</a>
-</form>
+</form>  
+</div>
       </div>
     </div>
     {{/each}}
