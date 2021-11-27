@@ -1,8 +1,6 @@
 const newPostHandler = async (event) => {
     event.preventDefault();
 
-    alert('Button works!');
-
     const title = document.querySelector('#post-title').value.trim();
     const content = document.querySelector('#post-content').value.trim();
 
@@ -18,15 +16,14 @@ const newPostHandler = async (event) => {
             },
         });
     
-    if (response.ok) {
-        document.location.replace('/dashboard');
-    } else {
+        if (response.ok) {
+            document.location.replace('/oldposts');
+        } else {
         alert('Failed to create blog post.');
+        }
     }
-}
-
 };
   
-  document
+document
     .querySelector('.new-post-form')
     .addEventListener('submit', newPostHandler);

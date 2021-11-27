@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
           where: {
             id: req.params.id
           },
-          attributes: ['id', 'content', 'title'],
+          attributes: ['id', 'content', 'title', 'date_created'],
           include: [{model: User, attributes: ['name']}]
         })
 
@@ -46,7 +46,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/edit/:id', async (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
   try {
       const postData = await Post.findOne({ 
         where: {

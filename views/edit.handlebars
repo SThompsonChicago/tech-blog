@@ -1,67 +1,63 @@
-<div>
-            <section class="hero is-success">
-
-
-<div class="hero-body">
-          <p class="title">
-            The Tech Blog
-          </p>
-        </div>
-        <div class="hero-foot">
-        <nav class="tabs is-boxed is-fullwidth">
+<section class="hero is-success">
+  <div class="hero-body">
+    <p class="title">
+      The Tech Blog
+    </p>
+  </div>
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         <ul>
           <li><a href="/" class="navbar-item">
-                      Community Posts
-                    </a></li>
+            Community Posts
+          </a></li>
           <li><a href="/dashboard" class="navbar-item">
-                      New Post
-                    </a></li>
-            <li><a href="/oldposts" class="navbar-item">
-                      Your Previous Posts
-                    </a></li>
+            New Post
+          </a></li>
+          <li><a href="/oldposts" class="navbar-item">
+            Your Previous Posts
+          </a></li>
           <li><a href="/login" id="logout">
-                      Logout
-                    </a></li>
-                              <li><a href="/login" id="logout">
-                      Login or Sign Up
-                    </a></li>
+            Logout
+          </a></li>
+          <li><a href="/login" id="logout">
+            Login or Sign Up
+          </a></li>
         </ul>
       </div>
     </nav>
-      </div>
-  </section>
+  </div>
+</section>
     
-
-  <div class="box">
-
+<div class="box">
   <div class="content">
-    <h1>New Post</h1>
-    <h3>Enter the title and body for your new post here.</h3>
+    <h1>Edit Post</h1>
+    <h3>Update the title and body for the post here.</h3>
   </div>
 
-<form class="form edit-post-form">
+  <form class="form edit-post-form" data-id="{{id}}">
     <div class="field">
-  <label class="label" for="post-title">Title</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Type your title here." id="edit-title" name="edit-title">
-  </div>
-</div>
+      <label class="label" for="edit-title">Title</label>
+      <div class="control">
+        <input class="input" type="text" placeholder="Type your title here." id="edit-title" name="edit-title" value="{{title}}">
+      </div>
+    </div>
 
-<div class="field">
-  <label class="label" for="edit-content">Body</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Enter your post here." rows="10" id="edit-content" name="edit-content"></textarea>
-  </div>
-</div>
+    <div class="field">
+      <label class="label" for="edit-content">Body</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Enter your post here." rows="10" id="edit-content" name="edit-content">{{content}}</textarea>
+      </div>
+    </div>
 
-<div class="field is-grouped">
-  <div class="control">
-    <button class="submit button is-link">Submit</button>
-  </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="submit button is-link">Submit</button>
+      </div>
+    </div>
   </form>
 </div>
 
  
 
-<script src="public/js/edit.js"></script>
+<script src="/js/edit.js"></script>
