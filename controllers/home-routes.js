@@ -46,6 +46,26 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/edit/:id', async (req, res) => {
+  try {
+      const postData = await Post.findOne({ 
+        where: {
+          id: req.params.id
+        },
+        attributes: ['id', 'content', 'title'],
+        include: [{model: User, attributes: ['name']}]
+      })
+
+      const post = postData.get({ plain: true });
+
+      res.render('edit', {
+          ...post
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
+
   router.get('/dashboard', withAuth, async (req, res) => {
     try {
       const userData = await User.findByPk(req.session.user_id, {

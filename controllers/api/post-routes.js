@@ -51,6 +51,25 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+router.put('/:id', (req, res) => {
+    // Update existing post with given id
+    Post.update(
+        {
+            title: req.body.title,
+            content: req.body.content,
+        },
+        {
+          where: {
+              id: req.params.id
+          },
+        }
+    )
+        .then((updatedPost) => {
+            res.json(updatedPost);
+        })
+        .catch((err) => res.json(err));
+});
+
 router.delete('/:id', async (req, res) => {
     try {
         const postData = await Post.destroy({
