@@ -1,4 +1,4 @@
-            <section class="hero is-success">
+<section class="hero is-success">
 
 
 <div class="hero-body">
@@ -11,19 +11,19 @@
       <div class="container">
         <ul>
           <li><a href="/" class="navbar-item">
-                      Home
+                      Community Posts
                     </a></li>
           <li><a href="/dashboard" class="navbar-item">
                       New Post
                     </a></li>
             <li><a href="/oldposts" class="navbar-item">
-                      Previous Posts
+                      Your Previous Posts
                     </a></li>
           <li><a href="/login" id="logout">
                       Logout
                     </a></li>
                               <li><a href="/login" id="logout">
-                      Login
+                      Login or Sign Up
                     </a></li>
         </ul>
       </div>
@@ -32,7 +32,10 @@
   </section>
     
 
-
+<div class="box">
+    <div>
+    <div class="field">
+  <label class="label">Click on a title below to read or comment on a post:</label>
 {{#each posts as |post| }}
 <div class="box">
   <div>
@@ -44,3 +47,4 @@
   </div>
 </div>
 {{/each}}
+</div>

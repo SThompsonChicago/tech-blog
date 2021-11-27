@@ -1,53 +1,48 @@
-<div>
-            <section class="hero is-success">
+
+<section class="hero is-success">
 
 
 <div class="hero-body">
           <p class="title">
             The Tech Blog
           </p>
-          <p class="subtitles">
-              Your previous posts
-          </p>
         </div>
         <div class="hero-foot">
-    <nav class="tabs is-boxed is-fullwidth">
+        <nav class="tabs is-boxed is-fullwidth">
       <div class="container">
         <ul>
           <li><a href="/" class="navbar-item">
-                      Home
+                      Community Posts
                     </a></li>
           <li><a href="/dashboard" class="navbar-item">
                       New Post
                     </a></li>
             <li><a href="/oldposts" class="navbar-item">
-                      Previous Posts
+                      Your Previous Posts
                     </a></li>
           <li><a href="/login" id="logout">
                       Logout
                     </a></li>
                               <li><a href="/login" id="logout">
-                      Login
+                      Login or Sign Up
                     </a></li>
         </ul>
       </div>
     </nav>
       </div>
   </section>
-    
-
-  <div class="box">
 
 
-
-
+<div class="box post-list">
 
   {{#if posts.length}}
   <div>
-    <h3>Your previous blog posts:</h3>
+    <div class="field">
+  <label class="label">Your Previous Posts</label>
+  </div>
 
     {{#each posts as |post|}}
-    <div>
+    <div class="box">
       <div>
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
@@ -55,13 +50,12 @@
         <p>{{post.content}}</p>
       </div>
       <div>
-        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">delete</button>
+        <button class="submit button is-link" data-id="{{post.id}}">delete</button>
       </div>
     </div>
     {{/each}}
   </div>
   {{/if}}
 </div>
-</div>
 
-<script src="./js/dashboard.js"></script>
+<script src="./js/delete.js"></script>

@@ -1,5 +1,40 @@
-<div>
-    <h2>{{title}}</h2>
+<section class="hero is-success">
+
+
+<div class="hero-body">
+          <p class="title">
+            The Tech Blog
+          </p>
+        </div>
+        <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          <li><a href="/" class="navbar-item">
+                      Community Posts
+                    </a></li>
+          <li><a href="/dashboard" class="navbar-item">
+                      New Post
+                    </a></li>
+            <li><a href="/oldposts" class="navbar-item">
+                      Your Previous Posts
+                    </a></li>
+          <li><a href="/login" id="logout">
+                      Logout
+                    </a></li>
+                              <li><a href="/login" id="logout">
+                      Login or Sign Up
+                    </a></li>
+        </ul>
+      </div>
+    </nav>
+      </div>
+  </section>
+
+<div class="box">
+        <div class="field">
+  <label class="label">{{title}}</label>
+  </div>
     <p>by {{user.name}}</p>
     <p>{{content}}</p>
 </div>
