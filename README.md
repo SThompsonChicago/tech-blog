@@ -3,7 +3,7 @@
 
   ## Description
 
-  This app allows users to create an account, login, and create/read/edit/delete blog posts. A video showing the functionality of this app can be found here: https://watch.screencastify.com/v/EM3IQqHFptTbPZbLmMnl. A link to the deployed application can be found here: https://still-refuge-81895.herokuapp.com/. This app was created using handlebars, express, mySQL and node. An image of the deployed application is shown below. 
+  This app allows users to create an account, login, and create/read/edit/delete blog posts. A video showing the functionality of this app can be found here: https://watch.screencastify.com/v/EM3IQqHFptTbPZbLmMnl. A link to the deployed application can be found here: https://still-refuge-81895.herokuapp.com/. A link tot he github repo can be found here: https://github.com/SThompsonChicago/tech-blog. This app was created using handlebars, express, mySQL and node. An image of the deployed application is shown below. 
 
   ![Image of deployed app.](appimage.png)
 
